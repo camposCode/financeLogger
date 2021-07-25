@@ -1,4 +1,25 @@
-import { Invoice } from "./classes/invoice";
+import { Invoice } from "./classes/invoice.js";
+import { Payment } from './classes/Payment.js'
+import { HasFormatter } from './interfaces/HasFormatter'
+
+interface IsPerson{
+    name: string;
+    age: number;
+    speak(a: string): void;
+    spend(a: number): number;
+}
+
+const me: IsPerson = {
+    name: 'jose',
+    age: 30,
+    speak(text: string): void{
+        console.log(text);
+    },
+    spend(amount: number): number{
+        console.log('i spend', amount);
+        return amount;
+    }
+}
 
 const invOne = new Invoice('xxx', 'portfolio', 3000);
 const invTwo = new Invoice('yyy', 'portfolio', 2500)
@@ -14,7 +35,7 @@ invoices.push(invTwo);
 console.log(invoices);
 
 invoices.forEach(e =>{
-    console.log(e.client, e.details, e.amount);
+    console.log(e.client, e.amount);
 })
 
 
