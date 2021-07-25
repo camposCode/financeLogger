@@ -1,21 +1,4 @@
-/* ************CLASSES: blueprint for objects************ */
-
-class Invoice{
-    // client: string;
-    // details: string;
-    // amount: number;
-
-
-    constructor(
-        readonly client: string,
-        readonly details: string,
-        public amount: number
-    ){}
-
-    format(){
-        return `${this.client} owes ${this.amount}€ for ${this.details}`
-    };
-}
+import { Invoice } from "./classes/invoice";
 
 const invOne = new Invoice('xxx', 'portfolio', 3000);
 const invTwo = new Invoice('yyy', 'portfolio', 2500)
