@@ -1,16 +1,16 @@
 /* ************CLASSES: blueprint for objects************ */
 
 class Invoice{
-    client: string;
-    details: string;
-    amount: number;
+    // client: string;
+    // details: string;
+    // amount: number;
 
 
-    constructor(c: string, d: string, a: number){
-        this.client = c;
-        this.details = d;
-        this.amount = a;
-    }
+    constructor(
+        readonly client: string,
+        readonly details: string,
+        public amount: number
+    ){}
 
     format(){
         return `${this.client} owes ${this.amount}€ for ${this.details}`
@@ -29,6 +29,11 @@ invoices.push(invOne);
 invoices.push(invTwo);
 
 console.log(invoices);
+
+invoices.forEach(e =>{
+    console.log(e.client, e.details, e.amount);
+})
+
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 // console.log(form.children);
