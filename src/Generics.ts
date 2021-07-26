@@ -7,3 +7,10 @@ const addUID = <T>(obj: T) =>{
 
 let docOne = addUID({name: 'jose', age: 35});
 console.log(docOne);
+
+//with Interfaces
+interface Resource<T>{
+    uid: number;
+    resourceName: string;
+    data: T;
+}

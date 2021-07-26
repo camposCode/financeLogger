@@ -82,3 +82,28 @@ form.addEventListener('submit', (e: Event) =>{
 
     list.render(doc, type.value, 'end');
 });
+
+//ENUMS
+
+enum ResourceType { BOOK, AUTHOR, FILM, DIRECTOR, PERSON }
+
+interface Resource<T>{
+    uid: number;
+    resourceType: ResourceType;
+    data: T;
+}
+
+const docOne: Resource<object> = {
+    uid: 1,
+    resourceType: ResourceType.BOOK,
+    data: { title: 'name of the wind' }
+}
+
+const docTwo: Resource<object> = {
+    uid: 10,
+    resourceType: ResourceType.AUTHOR,
+    data: { name: 'jose' }
+}
+
+console.log(docOne, docTwo);
+
